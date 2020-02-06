@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 1948846835}
   - component: {fileID: 1948846834}
   - component: {fileID: 1948846833}
+  - component: {fileID: 1948846836}
   m_Layer: 0
   m_Name: Follow Player Camera
   m_TagString: MainCamera
@@ -480,12 +481,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948846832}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 14.7, z: 0}
+  m_LocalPosition: {x: -6.9, y: 14.7, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1948846836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948846832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6ec37e1e2afd3448992c7a7012f630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 1195733197738997989}
+  SmoothFactor: 0.125
 --- !u!1 &2010737088
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3109153979287164046}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -8.12, y: 0.87, z: -4.21}
+  m_LocalPosition: {x: -6.981, y: 1.37, z: -4.21}
   m_LocalScale: {x: -0.16727144, y: -0.16727138, z: -0.47225922}
   m_Children:
   - {fileID: 2010737089}
@@ -635,10 +650,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3109153979287164046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d022037dea06f2d4c93481055e0fc1a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 804c2307e6f1c074f8285e238a0bc2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 3109153979287164049}
   moveSpeed: 3
+  floorMask: 1
 --- !u!54 &3109153979287164049
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -653,7 +670,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!33 &5015364048741272913
 MeshFilter:
