@@ -153,7 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660796762566ddb4a9725658502c9668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRigidbody: {fileID: 44191722}
   moveSpeed: 3
+  floorMask: 1
 --- !u!65 &44191718
 BoxCollider:
   m_ObjectHideFlags: 0
