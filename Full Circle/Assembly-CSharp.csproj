@@ -63,14 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\bulletBehaviour.cs" />
-    <Compile Include="Assets\CameraMovement.cs" />
-    <Compile Include="Assets\EnemyStats.cs" />
-    <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\Pickups.cs" />
-    <Compile Include="Assets\Rotate.cs" />
     <Compile Include="Assets\Scenes\MAINMENU.cs" />
-    <Compile Include="Assets\Shooting.cs" />
+    <Compile Include="Assets\Scripts\bulletBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Pickups.cs" />
+    <Compile Include="Assets\Scripts\Rotate.cs" />
+    <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -151,6 +151,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>E:/Documents/GitHub/Unity-Project/Full Circle/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>E:/Documents/GitHub/Unity-Project/Full Circle/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>E:/Documents/GitHub/Unity-Project/Full Circle/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>E:/Documents/GitHub/Unity-Project/Full Circle/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>E:/Documents/GitHub/Unity-Project/Full Circle/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
