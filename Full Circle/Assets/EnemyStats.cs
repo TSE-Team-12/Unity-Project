@@ -7,13 +7,9 @@ public class EnemyStats : MonoBehaviour
     public float MaxHealth = 100;
     public float CurHealth;
 
-    private void OnTriggerEnter(Collider other)
+    public void TakeDamage(float Amount)
     {
-        if (other.gameObject.tag == "Bullet")
-        {
-            CurHealth -= 25;
-            Destroy(other.gameObject, 0f);
-        }
+        CurHealth -= 25;
     }
 
     // Start is called before the first frame update

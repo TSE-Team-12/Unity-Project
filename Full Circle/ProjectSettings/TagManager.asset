@@ -9,6 +9,7 @@ TagManager:
   - AmmoPickup
   - Bullet
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
