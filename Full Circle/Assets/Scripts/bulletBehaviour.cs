@@ -4,42 +4,40 @@ using UnityEngine;
 
 public class bulletBehaviour : MonoBehaviour
 {
-    public LayerMask collisionmask;
-    public float Speed = 5;
+    public LayerMask collisionmask; // Used to check bullet hits
+    public float Speed = 5; 
     public float Damage = 25;
+
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 5);   
+        Destroy(this.gameObject, 5);   // Destroys the bullet after 5 seconds
     }
     
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * Speed);
+        transform.Translate(Vector3.forward * Time.deltaTime * Speed); // Moves the bullet forward, locked to deltaTime
 
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Time.deltaTime * Speed+0.5f, collisionmask))
+        Ray ray = new Ray(transform.position, transform.forward); // Produces forward line, has no range, stops when hits object
+        RaycastHit hit; // On hit, get hit object 
+        if (Physics.Raycast(ray, out hit, Time.deltaTime * Speed+0.5f, collisionmask)) // Check for collision, a small area infront of bullet, to prevent wall glitching
         {
 
-            if (hit.transform.tag == "Enemy")
+            if (hit.transform.tag == "Enemy") // Check through tags, if object hit is an enemy
             {
-                hit.transform.GetComponent<EnemyStats>().TakeDamage(Damage);
-                Destroy(gameObject);
-            } else if (hit.transform.tag == "Wall")
+                hit.transform.GetComponent<EnemyStats>().TakeDamage(Damage); // Call TakeDamage inside EnemyStats
+                Destroy(gameObject); // Destroy bullet
+            } else if (hit.transform.tag == "Wall") // Check through tags, if object hit is a wall (haha noob)
             {
-                Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal);
-                float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg;
-                transform.eulerAngles = new Vector3(0, rot, 0);
+                Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal); // Reflect ray if hits wall (else if, above)
+                float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg; // Gets rotation to reflect bullet
+                transform.eulerAngles = new Vector3(0, rot, 0); // Updates rotation of bullet
             }
-            else
+            else // Incase of other events
             {
                 
             }
-
-            
         }
-
     }
 }
