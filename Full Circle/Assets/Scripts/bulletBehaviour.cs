@@ -7,11 +7,20 @@ public class bulletBehaviour : MonoBehaviour
     public LayerMask collisionmask; // Used to check bullet hits
     public float Speed = 5; 
     public float Damage = 25;
+    AudioSource audioSource;
+    public AudioClip gunShot;
+    public AudioClip bulletCasing;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(this.gameObject, 5);   // Destroys the bullet after 5 seconds
+        audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = (Random.Range(0.6f, .9f));
+        audioSource.PlayOneShot(gunShot, 0.3F);
+        audioSource.pitch = (Random.Range(0.8f, 1));
+        audioSource.PlayOneShot(bulletCasing, 0.2f);//changes sounds pitch on bullet creation
     }
     
     // Update is called once per frame
