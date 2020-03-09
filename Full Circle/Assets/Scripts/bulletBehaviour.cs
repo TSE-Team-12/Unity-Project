@@ -16,7 +16,8 @@ public class bulletBehaviour : MonoBehaviour
     void Start()
     {
         Destroy(this.gameObject, 5);   // Destroys the bullet after 5 seconds
-        audioSource = GetComponent<AudioSource>();
+        GameObject gun = GameObject.FindGameObjectWithTag("Gun");
+        audioSource = gun.GetComponent<AudioSource>();
         audioSource.pitch = (Random.Range(0.6f, .9f));
         audioSource.PlayOneShot(gunShot, 0.3F);
         audioSource.pitch = (Random.Range(0.8f, 1));
