@@ -7,7 +7,7 @@ public class TorchScript : MonoBehaviour
     public GameObject Torch;
     public float range;
     int counter = 0;
-    private float minRange = 0;
+    private float minRange = 4;
     // Start is called before the first frame update
     void Start()
     {
