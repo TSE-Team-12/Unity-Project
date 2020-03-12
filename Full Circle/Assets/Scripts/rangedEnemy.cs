@@ -8,7 +8,7 @@ public class rangedEnemy : MonoBehaviour
     Transform player;
     public float attackTimer = 60;
     public float attackDist = 10;
-    public GameObject bullet;
+    public GameObject enemyBullet;
     float strayAmount = 10f;
     void Start()
     {
@@ -38,7 +38,7 @@ public class rangedEnemy : MonoBehaviour
 
     void enemyShoot() {
         var rndY = Random.Range(-strayAmount, strayAmount);
-        var enemyBullet = Instantiate(bullet, transform.position, transform.rotation); 
+        enemyBullet = Instantiate(enemyBullet, transform.position, transform.rotation) as GameObject;
         //Adds random bullet deviation to make the projectile a little less predictable //
         enemyBullet.transform.Rotate(player.transform.position.x, rndY, player.transform.position.z);
         
