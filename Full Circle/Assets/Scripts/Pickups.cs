@@ -9,8 +9,8 @@ public class Pickups : MonoBehaviour
     public Text healthText;
     public Text ammoText;
     public Text batteryText;
-    public GameObject gun;
-    public GameObject Torch;
+
+    //gets colours to change the text-colour
     public Color High;
     public Color Medium;
     public Color Low;
@@ -22,26 +22,27 @@ public class Pickups : MonoBehaviour
 
     void Start()
     {
-
-        health = 100;
-        ammo = gun.GetComponent<Shooting>().ammo;
-        battery = Torch.GetComponent<TorchScript>().range;
+        //gets starting values for the variables
+        health = PlayerHealth.CurHealth;
+        ammo = Shooting.ammo;
+        battery = TorchScript.range;
 
     }
 
     private void Update()
     {
-        UpdateHealth();
+        UpdateHealth();//calls the function every frame to make sure the health,ammo,battery are up to date
         UpdateAmmo();
         UpdateBattery();
     }
 
     void UpdateHealth()
     {
+        health = PlayerHealth.CurHealth;
         healthText.text = "Health: " + health.ToString();
         if (health >= 100)
         {
-            healthText.color = High;
+            healthText.color = High;//sets health colour to green
         }
         else if (health >= 60)
         {
@@ -49,14 +50,14 @@ public class Pickups : MonoBehaviour
         }
         else
         {
-            healthText.color = Low;
+            healthText.color = Low;//sets health to red
         }
 
     }
 
     void UpdateAmmo()
     {
-        ammo = gun.GetComponent<Shooting>().ammo;
+        ammo = Shooting.ammo;
         ammoText.text = "Ammo: " + ammo.ToString();
         if (ammo >= 10)
         {
@@ -74,7 +75,7 @@ public class Pickups : MonoBehaviour
 
     void UpdateBattery()
     {
-        battery = Torch.GetComponent<TorchScript>().range;
+        battery = TorchScript.range;
         batteryText.text = "Battery: " + battery.ToString();
         if (battery >= 66)
         {
@@ -95,22 +96,23 @@ public class Pickups : MonoBehaviour
 
         //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
         if (other.gameObject.CompareTag("HealthPickup"))
+            //checks for the HealthPickup tag to see if the player has entered the collider of trigger
         {
             other.gameObject.SetActive(false);
-            health = health + 20;
+            health = PlayerHealth.CurHealth += 20;
 
         }
-
+        //sets battery back to full 
         if (other.gameObject.CompareTag("BatteryPickup"))
         {
             other.gameObject.SetActive(false);
-            battery = Torch.GetComponent<TorchScript>().range += 20;
+            battery = TorchScript.range = 100;
         }
 
         if (other.gameObject.CompareTag("AmmoPickup"))
         {
             other.gameObject.SetActive(false);
-            gun.GetComponent<Shooting>().AddAmmo(10);
+            ammo = Shooting.ammo += 10;
         }
 
 

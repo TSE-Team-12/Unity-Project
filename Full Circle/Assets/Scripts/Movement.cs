@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody playerRigidbody;
     public float moveSpeed = 3f;
-    public int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
+    public LayerMask floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
     float camRayLength = 100f;
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,8 @@ public class Movement : MonoBehaviour
     void Update()
     {
         Turning();
+        //horizontal allows you to use a,d,left,right and vertical allows you to use w,s,up,down
         Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        transform.position += movement * Time.deltaTime * moveSpeed;
+        transform.position += movement * Time.deltaTime * moveSpeed;//moves the player
     }
 }
