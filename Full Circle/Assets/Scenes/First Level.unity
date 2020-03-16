@@ -4087,6 +4087,7 @@ GameObject:
   - component: {fileID: 44191716}
   - component: {fileID: 44191722}
   - component: {fileID: 44191717}
+  - component: {fileID: 44191723}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4222,6 +4223,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &44191723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44191715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc98e25c91128e4384728e92f5636f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &93502418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4851,6 +4864,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1357710308}
     m_Modifications:
+    - target: {fileID: -1278157749129305160, guid: 964843ceda774d74d938a5161bd4cf71,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 7049914380062942921, guid: 609dc08081ba2c44ba1bd811b79d4091,
+        type: 3}
     - target: {fileID: 1283063734553166915, guid: 964843ceda774d74d938a5161bd4cf71,
         type: 3}
       propertyPath: m_Name

@@ -16,7 +16,7 @@ public class Pickups : MonoBehaviour
     public Color Low;
 
 
-    private int health;
+    private float health;
     private int ammo;
     private float battery;
 
