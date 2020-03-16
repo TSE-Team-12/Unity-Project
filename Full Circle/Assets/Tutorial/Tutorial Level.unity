@@ -158,7 +158,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 44191722}
   moveSpeed: 4
-  floorMask: 1
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &44191717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2946,7 +2948,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435431125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 068b4573cc639e54f81e4702bde9ce50, type: 3}
+  m_Script: {fileID: 11500000, guid: ae9bd4d723b94d547b6e800f4076d3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1453121871
@@ -3407,7 +3409,7 @@ GameObject:
   - component: {fileID: 1591932204}
   - component: {fileID: 1591932203}
   - component: {fileID: 1591932202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Game Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
