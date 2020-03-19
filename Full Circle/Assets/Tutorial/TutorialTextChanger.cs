@@ -20,7 +20,9 @@ public class TutorialTextChanger : MonoBehaviour
         }
         else if (other.name == "Tutorial_Shooting")
         {
-            Tutorial.text = "To shoot click the mouse,\nyour bullets will bounce off of the walls";
+            Tutorial.text = "To shoot click the mouse,\n" +
+                "your bullets will bounce off of the walls\n" +
+                "there is an enemy you can practice shooting";
         }
         else if (other.name == "Tutorial_Pickups")
         {
@@ -29,13 +31,25 @@ public class TutorialTextChanger : MonoBehaviour
                 "the green ones restore 20 health\n" +
                 "the red ones restore 10 ammo";
         }
+        else if (other.name == "Tutorial_Flashlight")
+        {
+            Tutorial.text = "the flashlight will make it easier to see however\n" +
+                " its power will decrease over time\n" +
+                "to save battery right click to turn it off";
+        }
+        else if (other.name == "Tutorial_Pause")
+        {
+            Tutorial.text = "If you need to take a break you can use 'p' to pause\n" +
+                "an alternative is to expand the mini-map by using 'm'";
+        }
+        else if (other.name == "Tutorial_Lift")
+        {
+            Tutorial.text = "Every level has a lift to move onto the next level\n" +
+                "you have to step inside to activate the lift";
+        }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        
-        Tutorial.text = "";
-    }
+    
 
     // Update is called once per frame
     void Update()
