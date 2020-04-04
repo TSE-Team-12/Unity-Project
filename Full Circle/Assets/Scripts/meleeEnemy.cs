@@ -38,7 +38,6 @@ public class meleeEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (attackTimer >= 60) {
-                Debug.Log("collision");
                 PlayerHealth.CurHealth -= Damage;
                 attackTimer = 0;
             }
