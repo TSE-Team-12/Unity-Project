@@ -6,7 +6,7 @@ public class rangedEnemy : MonoBehaviour
 {
     
     Transform player;
-    public float attackTimer = 60;
+    private float attackTimer = 60;
     public float attackDist = 10;
     public GameObject enemyBullet;
     float strayAmount = 10f;
@@ -17,8 +17,7 @@ public class rangedEnemy : MonoBehaviour
     void Start()
     {
         muzzleF = false;
-        lightObj = GameObject.Find("enemyGun");
-        lightComp = lightObj.GetComponent<Light>();
+        lightComp = GetComponentInChildren<Light>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
