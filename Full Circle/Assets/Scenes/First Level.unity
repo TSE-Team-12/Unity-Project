@@ -24786,25 +24786,6 @@ PrefabInstance:
       objectReference: {fileID: 1416795455}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43854d2857d75354996b9461519bb3ad, type: 3}
---- !u!114 &8496709454676296926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215204725252444386}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23970b5ee45ad44f90f723638b581cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpot:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  SpotCounter: 0
 --- !u!1 &9215204725252444386
 GameObject:
   m_ObjectHideFlags: 0
@@ -24819,7 +24800,6 @@ GameObject:
   - component: {fileID: 9215204725252444389}
   - component: {fileID: 9215204725252444388}
   - component: {fileID: 9215204725252444387}
-  - component: {fileID: 8496709454676296926}
   - component: {fileID: 9215204725252444393}
   m_Layer: 0
   m_Name: MeleeEnemy
@@ -24856,8 +24836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d55ccc52d4387409f069a12cbd1332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
-  CurHealth: 100
+  MaxHealth: 50
+  CurHealth: 50
 --- !u!65 &9215204725252444389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24945,3 +24925,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackTimer: 60
   detectDist: 10
+  Damage: 20
