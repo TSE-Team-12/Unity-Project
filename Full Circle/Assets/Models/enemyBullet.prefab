@@ -111,8 +111,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   Speed: 5
   Damage: 10
-  gunShot: {fileID: 0}
-  bulletCasing: {fileID: 0}
+  gunShot: {fileID: 8300000, guid: 876b63bcfb6d1054b8c627934fd7b28e, type: 3}
+  bulletCasing: {fileID: 8300000, guid: 8147ec64abf8871419095f057fd09c5d, type: 3}
 --- !u!82 &977201293029316027
 AudioSource:
   m_ObjectHideFlags: 0

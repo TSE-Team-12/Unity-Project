@@ -40,9 +40,7 @@ public class enemyBulletBehaviour : MonoBehaviour
             }
             else if (hit.transform.tag == "Wall") // Check through tags, if object hit is a wall (haha noob)
             {
-                Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal); // Reflect ray if hits wall (else if, above)
-                float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg; // Gets rotation to reflect bullet
-                transform.eulerAngles = new Vector3(0, rot, 0); // Updates rotation of bullet
+                Destroy(this.gameObject);
             }
             else // Incase of other events
             {
