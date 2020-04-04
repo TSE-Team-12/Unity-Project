@@ -8,6 +8,7 @@ public class meleeEnemy : MonoBehaviour
     Transform player;
     public float attackTimer = 60;
     public float detectDist = 10;
+    public float Damage = 20;
     float moveSpeed = 3;
 
    
@@ -38,6 +39,7 @@ public class meleeEnemy : MonoBehaviour
         {
             if (attackTimer >= 60) {
                 Debug.Log("collision");
+                PlayerHealth.CurHealth -= Damage;
                 attackTimer = 0;
             }
         }
