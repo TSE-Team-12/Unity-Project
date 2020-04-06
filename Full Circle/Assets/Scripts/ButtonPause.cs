@@ -28,7 +28,7 @@ public class ButtonPause : MonoBehaviour
     public void OnExit()//点击“重新开始”时执行此方法
     {
         
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);//goes to menu scene (scene 0)
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenuNew");//goes to menu scene (scene 0)
         Time.timeScale = 1f;
     }
 
