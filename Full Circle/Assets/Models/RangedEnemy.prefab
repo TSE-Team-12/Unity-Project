@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b85583bca4f21b94596a1c14081ed9ff, type: 2}
+  - {fileID: 2100000, guid: 85edbcd9e6092b04bb2851035205adce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbfe0e49132b484ead57a2d9a26d06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTimer: 60
   attackDist: 10
   enemyBullet: {fileID: 7049914380062942921, guid: 609dc08081ba2c44ba1bd811b79d4091,
     type: 3}
@@ -265,10 +264,10 @@ Light:
   m_Enabled: 0
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 0.8118372, b: 0, a: 1}
-  m_Intensity: 4
+  m_Color: {r: 1, g: 0.009313857, b: 0, a: 1}
+  m_Intensity: 0.4
   m_Range: 10
-  m_SpotAngle: 30
+  m_SpotAngle: 113.3
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
