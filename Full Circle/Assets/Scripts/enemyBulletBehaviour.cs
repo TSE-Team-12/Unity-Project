@@ -16,7 +16,8 @@ public class enemyBulletBehaviour : MonoBehaviour
     void Start()
     {
         Destroy(this.gameObject, 5);   // Destroys the bullet after 5 seconds
-        audioSource = GetComponent<AudioSource>();
+        GameObject gun = GameObject.FindGameObjectWithTag("gun");
+        audioSource = gun.GetComponent<AudioSource>();
         audioSource.pitch = (Random.Range(0.6f, .9f));
         audioSource.PlayOneShot(gunShot, 0.3F);
         audioSource.pitch = (Random.Range(0.8f, 1));
@@ -40,9 +41,7 @@ public class enemyBulletBehaviour : MonoBehaviour
             }
             else if (hit.transform.tag == "Wall") // Check through tags, if object hit is a wall (haha noob)
             {
-                Vector3 reflect = Vector3.Reflect(ray.direction, hit.normal); // Reflect ray if hits wall (else if, above)
-                float rot = 90 - Mathf.Atan2(reflect.z, reflect.x) * Mathf.Rad2Deg; // Gets rotation to reflect bullet
-                transform.eulerAngles = new Vector3(0, rot, 0); // Updates rotation of bullet
+                Destroy(this.gameObject);
             }
             else // Incase of other events
             {

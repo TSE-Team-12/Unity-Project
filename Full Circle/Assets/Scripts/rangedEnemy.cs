@@ -6,12 +6,18 @@ public class rangedEnemy : MonoBehaviour
 {
     
     Transform player;
-    public float attackTimer = 60;
+    private float attackTimer = 60;
     public float attackDist = 10;
     public GameObject enemyBullet;
     float strayAmount = 10f;
+    private GameObject lightObj;
+    private Light lightComp;
+    private bool muzzleF;
+   
     void Start()
     {
+        muzzleF = false;
+        lightComp = GetComponentInChildren<Light>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -34,6 +40,10 @@ public class rangedEnemy : MonoBehaviour
         if (attackTimer < 60){
             attackTimer++;
         }
+        if (attackTimer >= 5 && muzzleF) {
+            muzzleF = false;
+            lightComp.enabled = !lightComp.enabled;
+        }
     } 
 
     void enemyShoot() {
@@ -41,6 +51,8 @@ public class rangedEnemy : MonoBehaviour
         Quaternion Angle = Quaternion.Euler(player.transform.position.x,transform.position.y + rndY, player.transform.position.z) ;
         
         Instantiate(enemyBullet, transform.position,transform.rotation);
+        lightComp.enabled = !lightComp.enabled;
+        muzzleF = true;
         //Adds random bullet deviation to make the projectile a little less predictable //
         
         
