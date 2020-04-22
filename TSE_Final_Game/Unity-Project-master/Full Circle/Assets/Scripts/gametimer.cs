@@ -8,6 +8,7 @@ public class gametimer : MonoBehaviour
     public Text timerText;
     private float startTime;
     private bool finnished = false;
+    public string finishedTime;
     void Start()
     {
         startTime = Time.time;
@@ -24,6 +25,7 @@ public class gametimer : MonoBehaviour
 
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f1");
+        NextLevel.FinishedTime = minutes + ":" + seconds;
 
         timerText.text = minutes + ":" + seconds;
     }

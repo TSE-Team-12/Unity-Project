@@ -10,6 +10,7 @@ public class enemyBulletBehaviour : MonoBehaviour
     AudioSource audioSource;
     public AudioClip gunShot;
     public AudioClip bulletCasing;
+    PlayerHealth Playerhealth;
 
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class enemyBulletBehaviour : MonoBehaviour
         audioSource.PlayOneShot(gunShot, 0.3F);
         audioSource.pitch = (Random.Range(0.8f, 1));
         audioSource.PlayOneShot(bulletCasing, 0.2f);//changes sounds pitch on bullet creation
+        Playerhealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class enemyBulletBehaviour : MonoBehaviour
 
             if (hit.transform.tag == "Player") // Check through tags, if object hit is an enemy
             {
-                PlayerHealth.CurHealth -= Damage; // Call TakeDamage inside EnemyStats
+                Playerhealth.TakeDamage(Damage); // Call TakeDamage inside EnemyStats
                 Destroy(gameObject); // Destroy bullet
             }
             else if (hit.transform.tag == "Wall") // Check through tags, if object hit is a wall (haha noob)

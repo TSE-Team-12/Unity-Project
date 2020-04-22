@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class meleeEnemy : MonoBehaviour
 {
-    
+
     Transform player;
     public float attackTimer = 60;
     public float detectDist = 10;
     public float Damage = 20;
     float moveSpeed = 3;
+    PlayerHealth Playerhealth;
 
-   
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        Playerhealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -34,11 +36,13 @@ public class meleeEnemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) { 
+    void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.tag == "Player")
         {
-            if (attackTimer >= 60) {
-                PlayerHealth.CurHealth -= Damage;
+            if (attackTimer >= 60)
+            {
+                Playerhealth.TakeDamage(Damage);
                 attackTimer = 0;
             }
         }
