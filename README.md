@@ -1,3 +1,1 @@
 # Unity-Project
-
-BACKUP STATE: .GITIGNORE FIXED
